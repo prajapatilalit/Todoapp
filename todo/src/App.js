@@ -3,12 +3,12 @@ import "./App.css";
 
 import ToDoList from "./Components/toDoList/ToDoList";
 
-function App() {
+const App = () => {
   return (
     <div className="todo_app">
       <ToDoList />
     </div>
   );
-}
+};
 
 export default App;
