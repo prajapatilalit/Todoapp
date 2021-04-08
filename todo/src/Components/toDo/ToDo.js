@@ -1,19 +1,21 @@
-// import React, { Component, Fragment } from "react";
+import React, { useState } from "react";
 
-// class ToDo extends Component {
-//   render() {
-//     return (
-//       <Fragment>
-//         <div className="container">
-//           <h1>To-Do</h1>
-//           <div className="input">
-//             <input type="text" />
-//             <button>add</button>
-//           </div>
-//         </div>
-//       </Fragment>
-//     );
-//   }
-// }
+function Todo(props) {
+  const [edit, setEdit] = useState({
+    id: null,
+    value: "",
+  });
+  return todos.map((todo, index) => (
+    <div
+      className={todo.isComplete ? "todo-row complete" : "todo-row"}
+      key={index}
+    >
+      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+        {todo.text}
+      </div>
+      <div className="icons"></div>
+    </div>
+  ));
+}
 
-// export default ToDo;
+export default Todo;
