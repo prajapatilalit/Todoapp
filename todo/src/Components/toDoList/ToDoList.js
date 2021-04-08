@@ -5,7 +5,10 @@ import TodoForm from "../toDoForm/ToDoForm";
 function ToDoList() {
   const [todos, setTodos] = useState([]);
 
+  //Add todo
   const addTodo = (todo) => {
+    // check the space between the word
+
     if (!todo.text || /^\*$/.test(todo.text)) {
       return;
     }
@@ -16,6 +19,7 @@ function ToDoList() {
   };
 
   const updateTodo = (todoId, newValue) => {
+    // check the space between the word
     if (!newValue.text || /^\*$/.test(newValue.text)) {
       return;
     }
@@ -24,11 +28,13 @@ function ToDoList() {
     );
   };
 
+  // Remove todo
   const removeTodo = (id) => {
     const removeArr = [...todos].filter((todo) => todo.id !== id);
     setTodos(removeArr);
   };
 
+  // update todo
   const completeTodo = (id) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
