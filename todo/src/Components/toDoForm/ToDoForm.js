@@ -26,7 +26,7 @@ function TodoForm(props) {
         className="todo_form-input"
         onChange={handleChange}
       />
-      <button className="add_btn">add Todo</button>
+      <button className="todo_btn">add Todo</button>
     </form>
   );
 }
