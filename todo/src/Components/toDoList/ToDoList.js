@@ -7,11 +7,6 @@ const ToDoList = () => {
 
   //Add todo
   const addTodo = (todo) => {
-    // check the space between the word
-
-    if (!todo.text || /^\*$/.test(todo.text)) {
-      return;
-    }
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
@@ -19,10 +14,6 @@ const ToDoList = () => {
   };
 
   const updateTodo = (todoId, newValue) => {
-    // check the space between the word
-    if (!newValue.text || /^\*$/.test(newValue.text)) {
-      return;
-    }
     setTodos((prev) =>
       prev.map((item) => (item.id === todoId ? newValue : item))
     );
@@ -45,9 +36,20 @@ const ToDoList = () => {
 
     setTodos(updatedTodos);
   };
+  //reset all todo in the list
+
+  const resetTodo = () => {
+    setTodos([]);
+  };
 
   return (
     <div>
+      <div className="r-btn">
+        <button onClick={resetTodo} className="reset-button">
+          Reset
+        </button>
+      </div>
+
       <h1>What's Your Plan </h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
