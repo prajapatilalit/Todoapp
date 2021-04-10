@@ -34,7 +34,7 @@ const ToDoList = () => {
     setTodos(removeArr);
   };
 
-  // update todo
+  //mark as completed todo
   const completeTodo = (id) => {
     let updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
@@ -42,6 +42,7 @@ const ToDoList = () => {
       }
       return todo;
     });
+
     setTodos(updatedTodos);
   };
 
